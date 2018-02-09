@@ -73,7 +73,7 @@ class Main extends PluginBase  implements Listener {
                         $max = $this->getConfig()->get("max-friends");
                         if(count($this->getAllFriends($player)) == $max) {
                             $sender->sendMessage(TextFormat::RED . "[iFriend] You have the max amount of friends!");
-                            return;
+                            return true;
                         }
                         $friendexact =  $this->getServer()->getPlayer($args[0]);
                         if(!$friendexact instanceof Player) {
