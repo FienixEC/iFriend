@@ -56,11 +56,11 @@ class Main extends PluginBase  implements Listener {
             $this->getLogger()->info(TextFormat::GREEN . "Using YML provider.");
         }
     }
-	public function onCommand(CommandSender $sender, Command $command, $label, array $args) {
+	public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
             if($sender instanceof Player) {
                 $player = strtolower($sender->getName());
                 $pc = $sender->getName();
-                if(strtolower($command->getName()) == "friend") {
+                if(strtolower($cmd->getName()) == "friend") {
                     if(empty($args)) {
                             $sender->sendMessage(TextFormat::RED . "[iFriend] Usage:/friend <player-name> OR [accept/decline]");
                             return true;
